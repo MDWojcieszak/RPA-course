@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1234,1821" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1234,1784" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -48,7 +48,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="In this sequence we will read the two files and create a data table for each of them, one for the Clients file and one for the Invoices file. We will then join the data tables to calculate the total sum of invoices for the clients that are bankrupt, and by doing this we will see the total loss. " DisplayName="sequence" sap:VirtualizedContainerService.HintSize="376,1656" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="In this sequence we will read the two files and create a data table for each of them, one for the Clients file and one for the Invoices file. We will then join the data tables to calculate the total sum of invoices for the clients that are bankrupt, and by doing this we will see the total loss. " DisplayName="sequence" sap:VirtualizedContainerService.HintSize="396,1619" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="invoicesDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="clientsDT" />
@@ -62,7 +62,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="Reading the Invoices Excel file and creating a data table called invoicesDT to store the information." DataTable="[invoicesDT]" DisplayName="Read Invoices File" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Invoices.xlsx">
+    <ui:ReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="Reading the Invoices Excel file and creating a data table called invoicesDT to store the information." DataTable="[invoicesDT]" DisplayName="Read Invoices File" sap:VirtualizedContainerService.HintSize="354,129" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Invoices.xlsx">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
@@ -74,14 +74,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadRange>
-    <ui:ReadCsvFile Encoding="{x:Null}" sap2010:Annotation.AnnotationText="Reading the Clients CSV file and creating a data table called clientsDT to store the information." DataTable="[clientsDT]" Delimitator="Comma" DisplayName="Read Clients File" FilePath="Clients.csv" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1">
+    <ui:ReadCsvFile Encoding="{x:Null}" sap2010:Annotation.AnnotationText="Reading the Clients CSV file and creating a data table called clientsDT to store the information." DataTable="[clientsDT]" Delimitator="Comma" DisplayName="Read Clients File" FilePath="Clients.csv" sap:VirtualizedContainerService.HintSize="354,194" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadCsvFile>
-    <ui:JoinDataTables sap2010:Annotation.AnnotationText="Joining the two data tables by looking which Clients are in both of the files based on their name." DataTable1="[clientsDT]" DataTable2="[invoicesDT]" DisplayName="Join Client and Invoices Data Tables" sap:VirtualizedContainerService.HintSize="334,101" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[resultDT]">
+    <ui:JoinDataTables sap2010:Annotation.AnnotationText="Joining the two data tables by looking which Clients are in both of the files based on their name." DataTable1="[clientsDT]" DataTable2="[invoicesDT]" DisplayName="Join Client and Invoices Data Tables" sap:VirtualizedContainerService.HintSize="354,101" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[resultDT]">
       <ui:JoinDataTables.Arguments>
         <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
           <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -100,7 +100,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:JoinDataTables>
-    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtering the resulted data table on which Client is Bankrupt, and removing the columns that are not needed." DataTable="[resultDT]" DisplayName="Filter Resulted Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[filteredDT]" SelectColumnsMode="Remove">
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtering the resulted data table on which Client is Bankrupt, and removing the columns that are not needed." DataTable="[resultDT]" DisplayName="Filter Resulted Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="354,116" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[filteredDT]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -125,19 +125,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[filteredDT]" DisplayName="For Each Row in the Data Table" sap:VirtualizedContainerService.HintSize="334,393" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[filteredDT]" DisplayName="For Each Row in the Data Table" sap:VirtualizedContainerService.HintSize="354,357" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="265.6,244.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,209" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap2010:Annotation.AnnotationText="Converting the string from the data table to Integer and calculating the sum on the &quot;InvoiceValue&quot; column." DisplayName="Calculate Total Loss" sap:VirtualizedContainerService.HintSize="243.2,120" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap2010:Annotation.AnnotationText="Converting the string from the data table to Integer and calculating the sum on the &quot;InvoiceValue&quot; column." DisplayName="Calculate Total Loss" sap:VirtualizedContainerService.HintSize="262,117" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[totalLoss]</OutArgument>
               </Assign.To>
@@ -154,14 +154,14 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:WriteRange AddHeaders="True" sap2010:Annotation.AnnotationText="Writing the new filtered data table to a file." DataTable="[filteredDT]" DisplayName="Write Final File" sap:VirtualizedContainerService.HintSize="314.4,144" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Results.xlsx">
+    <ui:WriteRange AddHeaders="True" sap2010:Annotation.AnnotationText="Writing the new filtered data table to a file." DataTable="[filteredDT]" DisplayName="Write Final File" sap:VirtualizedContainerService.HintSize="354,146" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Results.xlsx">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:WriteRange>
-    <ui:WriteCell sap2010:Annotation.AnnotationText="Writing the sum of the loss in the H4 cell of the new file." Cell="H4" DisplayName="Write Total to file" sap:VirtualizedContainerService.HintSize="314.4,160" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="[&quot;The total loss is: &quot; + totalLoss.ToString]" WorkbookPath="results.xlsx">
+    <ui:WriteCell sap2010:Annotation.AnnotationText="Writing the sum of the loss in the H4 cell of the new file." Cell="H4" DisplayName="Write Total to file" sap:VirtualizedContainerService.HintSize="354,157" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="[&quot;The total loss is: &quot; + totalLoss.ToString]" WorkbookPath="results.xlsx">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
